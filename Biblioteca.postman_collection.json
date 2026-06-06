@@ -1,0 +1,141 @@
+{
+  "info": {
+    "_postman_id": "3b7e4264-30e7-46b1-9626-8b88bf9254ae",
+    "name": "Biblioteca",
+    "description": "### 1\\. Listar Livros\n\n- **Método:** `GET`\n    \n- **URL:** `http://localhost:8080/livros`\n    \n- **Descrição:** Retorna uma lista completa com todos os livros que estão cadastrados no banco de dados. Se o banco estiver vazio, retorna uma lista vazia `[]`. Não exige envio de dados adicionais.\n    \n\n### 2\\. Adicionar Novo Livro\n\n- **Método:** `POST`\n    \n- **URL:** `http://localhost:8080/livros`\n    \n- **Descrição:** Cadastra um novo livro no sistema. É obrigatório enviar todos os atributos do livro no corpo (_Body_) da requisição, em formato JSON. O banco de dados irá gerar o `id` automaticamente.\n    \n- **Exemplo de Body (JSON):**\n    \n\nJSON\n\n```\n{\n  \"titulo\": \"O Senhor dos Anéis\",\n  \"autores\": [\"J.R.R. Tolkien\"],\n  \"categoria\": \"Fantasia\",\n  \"anoPublicacao\": 1954,\n  \"status\": \"EM_ESTOQUE\"\n}\n\n ```\n\n- Para adicionar livros com mais de um autor, utilize o seguinte formato:\n    \n\nJSON\n\n```\n \"autores\": [\"J.R.R. Tolkien\" , \"Christopher Tolkien\"],\n\n ```\n\n### 3\\. Atualizar Livro\n\n- **Método:** `PUT`\n    \n- **URL:** `http://localhost:8080/livros/{id}` _(Ex:_ `_/livros/1_`_)_\n    \n- **Descrição:** Sobrescreve as informações de um livro já existente. É necessário informar o `id` exato do livro na própria URL e enviar no corpo (_Body_) da requisição o JSON com os dados que você deseja atualizar.\n    \n- **Exemplo de Body (JSON):**\n    \n\nJSON\n\n```\n{\n  \"titulo\": \"O Senhor dos Anéis - A Sociedade do Anel\",\n  \"autores\": [\"J.R.R. Tolkien\", \"Christopher Tolkien\"],\n  \"categoria\": \"Fantasia Épica\",\n  \"anoPublicacao\": 1954,\n  \"status\": \"EMPRESTADO\"\n}\n\n ```\n\n### 4\\. Deletar Livro\n\n- **Método:** `DELETE`\n    \n- **URL:** `http://localhost:8080/livros/{id}` _(Ex:_ `_/livros/1_`_)_\n    \n- **Descrição:** Remove permanentemente um livro do banco de dados. O único dado necessário é o `id` do livro, que deve ser passado diretamente na URL. Não precisa de corpo (_Body_).\n    \n\n### 5\\. Busca Avançada\n\n- **Método:** `GET`\n    \n- **URL:** `http://localhost:8080/livros/busca`\n    \n- **Descrição:** Permite encontrar livros específicos através de filtros dinâmicos passados pela URL (_Query Parameters_). Você deve usar a interrogação `?` seguida do atributo e do valor desejado. A API atual retorna o primeiro filtro que encontrar como verdadeiro na ordem do seu código.\n    \n- **Filtros disponíveis:** `titulo`, `categoria`, `autor`, `anoPublicacao`, `status`.\n    \n- **Exemplos de URL:**\n    \n    - Por Categoria: `http://localhost:8080/livros/busca?categoria=Fantasia`\n        \n    - Por Autor: `http://localhost:8080/livros/busca?autor=Tolkien`\n        \n    - Por Ano: `http://localhost:8080/livros/busca?anoPublicacao=1954`",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53993991",
+    "_collection_link": "https://go.postman.co/collection/53993991-3b7e4264-30e7-46b1-9626-8b88bf9254ae?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar Livros",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Adicionar Novo Livro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/livros",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "livros"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Livro",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/livros/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "livros",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar Livro",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/livros/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "livros",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Busca Avançada",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/livros/busca?",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "livros",
+            "busca"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
