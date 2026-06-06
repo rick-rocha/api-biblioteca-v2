@@ -12,7 +12,7 @@ Este projeto representa uma evolução significativa em relação à versão ant
 - CRUD completo de livros
 - Suporte a múltiplos autores via `@ElementCollection`
 - Controle de estoque por quantidade de exemplares
-- Status automático: `EM_ESTOQUE`, `LOCADO`, `INDISPONIVEL`
+- Status automático: `ESTOQUE`, `LOCADO`, `INDISPONIVEL`
 - Busca avançada combinada por múltiplos filtros simultâneos (título, categoria, autor, ano, status)
 
 ### Usuários
@@ -121,12 +121,12 @@ O Hibernate criará as tabelas automaticamente ao subir a aplicação.
 ### Locações
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
-| GET | `/locacao` | Lista todas as locações |
-| GET | `/locacao/em-aberto` | Lista locações em aberto |
-| GET | `/locacao/em-atraso` | Lista locações em atraso |
-| GET | `/locacao/usuario/{id}` | Lista locações por usuário |
-| POST | `/locacao` | Registra nova locação |
-| PATCH | `/locacao/{id}/devolver` | Registra devolução |
+| GET | `/locacoes` | Lista todas as locações |
+| GET | `/locacoes/em-aberto` | Lista locações em aberto |
+| GET | `/locacoes/em-atraso` | Lista locações em atraso |
+| GET | `/locacoes/usuario/{id}` | Lista locações por usuário |
+| POST | `/locacoes` | Registra nova locação |
+| PATCH | `/locacoes/{id}/devolver` | Registra devolução |
 
 ---
 
