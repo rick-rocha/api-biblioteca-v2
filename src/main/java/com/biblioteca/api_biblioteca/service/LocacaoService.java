@@ -109,7 +109,7 @@ public class LocacaoService {
     locacao.setDevolvido(true);
 
     boolean atrasado = hoje.isAfter(locacao.getDataPrevistaDevolucao());
-    locacao.setEmAtraso(true);
+    locacao.setEmAtraso(atrasado);
 
     if (atrasado) {
         long diasAtraso = ChronoUnit.DAYS.between(locacao.getDataPrevistaDevolucao(), hoje);

@@ -21,13 +21,13 @@ public class LivroService {
 
     private LivroResponseDTO toDTO(Livro livro) {
         return new LivroResponseDTO(
-                livro.getId();
-                livro.getTitulo();
-                livro.getAutores();
-                livro.getGenero();
-                livro.getAnoPublicacao();
-                livro.getStatus();
-                livro.getQuantidade();
+                livro.getId(),
+                livro.getTitulo(),
+                livro.getAutores(),
+                livro.getGenero(),
+                livro.getAnoPublicacao(),
+                livro.getStatus(),
+                livro.getQuantidade()
         );
     }
 

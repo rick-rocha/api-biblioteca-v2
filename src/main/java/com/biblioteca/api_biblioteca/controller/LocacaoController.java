@@ -1,4 +1,4 @@
-javapackage com.biblioteca.api_biblioteca.controller;
+package com.biblioteca.api_biblioteca.controller;
 
 import com.biblioteca.api_biblioteca.dto.LocacaoRequestDTO;
 import com.biblioteca.api_biblioteca.dto.LocacaoResponseDTO;
@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @RestController
-@RequestMapping("/locacao")
+@RequestMapping("/locacoes")
 public class LocacaoController {
 
     @Autowired
@@ -46,7 +44,7 @@ public class LocacaoController {
     }
 
     @PatchMapping("/{id}/devolver")
-    public ResponseEntity<LocacaoResponseDTO> devolver(@RequestBody LocacaoRequestDTO dto){
+    public ResponseEntity<LocacaoResponseDTO> devolver(@PathVariable Long id){
         return ResponseEntity.ok(service.devolver(id));
     }
 

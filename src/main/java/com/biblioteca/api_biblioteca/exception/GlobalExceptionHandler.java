@@ -44,7 +44,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleErroGenerico(Exception ex) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(construirErro(HttpStatus.INTERNAL_SERVER_ERROR, "Erro interno do servidor"));
+        ex.printStackTrace();
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(construirErro(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage()));
     }
 
     private Map<String, Object> construirErro(HttpStatus status, String mensagem) {

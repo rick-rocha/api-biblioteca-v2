@@ -27,6 +27,7 @@ public class Livro {
     private List<String> autores;
     private String genero;
     private Integer anoPublicacao;
+    @Enumerated(EnumType.STRING)
     private StatusLivro status;
     private Integer quantidade;
 }

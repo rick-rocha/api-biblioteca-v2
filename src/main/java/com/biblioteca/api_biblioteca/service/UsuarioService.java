@@ -19,11 +19,11 @@ public class UsuarioService {
 
     private UsuarioResponseDTO toDTO(Usuario usuario){
         return new UsuarioResponseDTO(
-                usuario.getId();
-                usuario.getNome();
-                usuario.getCpf();
-                usuario.getEmail();
-                usuario.getTelefone();
+                usuario.getId(),
+                usuario.getNome(),
+                usuario.getCpf(),
+                usuario.getEmail(),
+                usuario.getTelefone()
         );
     }
 
