@@ -27,6 +27,7 @@ public class LivroController {
         return ResponseEntity.ok(livros);
     }
 
+    // Busca Avançada
     @GetMapping("/busca")
     public ResponseEntity<List<LivroResponseDTO>> buscar(
             @RequestParam(required = false) String titulo,
@@ -39,7 +40,7 @@ public class LivroController {
         return ResponseEntity.ok(livros);
     }
 
-    // Busca Avançada
+    // Busca por ID
     @GetMapping("/{id}")
     public ResponseEntity<LivroResponseDTO> buscarPorID(@PathVariable Long id) {
         LivroResponseDTO livro = service.buscarPorIdDTO(id);
